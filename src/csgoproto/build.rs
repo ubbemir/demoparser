@@ -11,6 +11,13 @@ fn main() -> Result<()> {
         ])
         .status()?;
 
+    const COMMIT_HASH: &str = "04d3e4a67ac60168d0e79594c69a2116bb3b7278";
+    let status = Command::new("git").args(["-C", "GameTracking-CS2", "checkout", COMMIT_HASH]).status()?;
+
+    if !status.success() {
+        panic!("git checkout failed");
+    }
+
     let protos = vec![
         "GameTracking-CS2/Protobufs/steammessages.proto",
         "GameTracking-CS2/Protobufs/gcsdk_gcmessages.proto",
