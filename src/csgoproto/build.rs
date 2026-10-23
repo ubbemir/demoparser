@@ -11,7 +11,7 @@ fn main() -> Result<()> {
         ])
         .status()?;
 
-    const COMMIT_HASH: &str = "2ea54a3679c052e4344bfcdc716e1283b4787e0e";
+    const COMMIT_HASH: &str = "2e606a0bc54f619bc96689ae29cddc337cbde60a";
     let status = Command::new("git")
         .args([
             "-C",
